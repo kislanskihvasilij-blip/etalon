@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  No production domain was available in this codebase at generation time.
+  Replace https://example.com below with the site's real deployed domain
+  before publishing. This is a single-page site, so only the homepage
+  is listed here — do not add fake extra URLs.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

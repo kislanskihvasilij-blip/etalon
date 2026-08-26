@@ -1,0 +1,42 @@
+import { Header } from "@/components/Header"
+import { Hero } from "@/components/Hero"
+import { TrustStrip } from "@/components/TrustStrip"
+import { PromoBar } from "@/components/PromoBar"
+import { Featured } from "@/components/Featured"
+import { InteriorWalk } from "@/components/InteriorWalk"
+import { ProjectsSection } from "@/components/ProjectsSection"
+import { CustomProject } from "@/components/CustomProject"
+import { Financing } from "@/components/Financing"
+import { Process } from "@/components/Process"
+import { Stats } from "@/components/Stats"
+import { Reviews } from "@/components/Reviews"
+import { Contact } from "@/components/Contact"
+import { Footer } from "@/components/Footer"
+import { CustomCursor } from "@/components/CustomCursor"
+import { useRevealAll } from "@/hooks/useRevealAll"
+
+export default function App() {
+  useRevealAll()
+
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <PromoBar />
+        <Featured />
+        <InteriorWalk />
+        <ProjectsSection />
+        <CustomProject />
+        <Financing />
+        <Process />
+        <Stats />
+        <Reviews />
+        <Contact />
+      </main>
+      <Footer />
+      <CustomCursor />
+    </>
+  )
+}
