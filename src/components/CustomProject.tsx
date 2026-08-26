@@ -1,3 +1,5 @@
+import { WordReveal } from "@/components/WordReveal"
+
 export function CustomProject() {
   return (
     <section className="section-pad" id="custom">
@@ -6,8 +8,7 @@ export function CustomProject() {
           <div className="block-head">
             <h2>Проектируем дом по вашему техническому заданию</h2>
             <p>
-              Учитываем планировку, ориентацию по сторонам света и зонирование участка: шумные зоны отдельно от
-              детской и скважины.
+              <WordReveal text="Учитываем планировку, ориентацию по сторонам света и зонирование участка: шумные зоны отдельно от детской и скважины." />
             </p>
           </div>
 
@@ -28,8 +29,16 @@ export function CustomProject() {
         </div>
 
         <div className="custom-project-media reveal">
-          <img src="/img/blueprint-1.png" alt="Чертёж проекта одноэтажного дома" loading="lazy" />
-          <img src="/img/blueprint-2.png" alt="Чертёж проекта двухэтажного дома" loading="lazy" />
+          <img
+            className="custom-project-photo"
+            src="/img/custom-project-photo.jpg"
+            alt="Ход строительства: черновая отделка помещения с окнами по проекту"
+            loading="lazy"
+          />
+          <div className="custom-project-blueprints">
+            <img src="/img/blueprint-1.png" alt="Чертёж проекта одноэтажного дома" loading="lazy" />
+            <img src="/img/blueprint-2.png" alt="Чертёж проекта двухэтажного дома" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>

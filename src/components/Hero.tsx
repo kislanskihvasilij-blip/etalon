@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Pause, Play } from "lucide-react"
 import { useReducedMotion } from "@/hooks/useRevealAll"
+import { WordReveal } from "@/components/WordReveal"
 
 const PHOTOS = [
   { src: "/img/walkthrough/01.jpg", alt: "Дом, вид с улицы" },
@@ -67,8 +68,10 @@ export function Hero() {
           Каждый этап — по договору.
         </h1>
         <p className="hero-sub">
-          Полный цикл строительства в Краснодарском крае: проект, смета, технический надзор на каждом этапе,
-          сдача объекта по акту. Оплата поэтапно по договору, гарантия три года.
+          <WordReveal
+            triggerOnMount
+            text="Полный цикл строительства в Краснодарском крае: проект, смета, технический надзор на каждом этапе, сдача объекта по акту. Оплата поэтапно по договору, гарантия три года."
+          />
         </p>
         <div className="hero-actions">
           <a href="#contact" className="btn btn-primary">

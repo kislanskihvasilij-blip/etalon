@@ -1,3 +1,5 @@
+import { WordReveal } from "@/components/WordReveal"
+
 const ITEMS = [
   { title: "Ипотека", text: "Оформляем ипотечную заявку в офисе компании." },
   { title: "Поэтапная оплата", text: "Отдельный договор и платёж на каждый этап строительства согласно графику платежей." },
@@ -14,7 +16,7 @@ export function Financing() {
           </div>
         </div>
         <p className="financing-note reveal">
-          Стоимость строительства фиксируется в договоре и не меняется в процессе работ.
+          <WordReveal text="Стоимость строительства фиксируется в договоре и не меняется в процессе работ." />
         </p>
 
         <div className="financing-list reveal">
