@@ -129,6 +129,7 @@ main > section[id] .block-head::before {
 }
 
 section { position: relative; }
+section[id] { scroll-margin-top: 92px; }
 
 .section-pad { padding-block: var(--space-section); }
 .section-pad-sm { padding-block: var(--space-section-sm); }
@@ -381,7 +382,7 @@ section { position: relative; }
 .hero-bg-word {
   position: absolute;
   left: 50%;
-  bottom: -2.5vw;
+  bottom: -5.5vw;
   transform: translateX(-50%);
   z-index: -1;
   font-size: clamp(4rem, 15vw, 11rem);

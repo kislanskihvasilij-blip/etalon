@@ -24,14 +24,14 @@ export default function App() {
       <main>
         <Hero />
         <TrustStrip />
-        <PromoBar />
+        <Stats />
+        <ProjectsSection />
         <Featured />
         <InteriorWalk />
-        <ProjectsSection />
         <CustomProject />
-        <Financing />
         <Process />
-        <Stats />
+        <Financing />
+        <PromoBar />
         <Reviews />
         <Contact />
       </main>
