@@ -505,6 +505,8 @@ section { position: relative; }
   overflow: hidden;
   aspect-ratio: 16 / 10;
   background: var(--graphite);
+  max-width: 820px;
+  margin-inline: auto;
 }
 .feature-showcase-img {
   position: absolute;
@@ -757,6 +759,7 @@ section { position: relative; }
   font-size: 1.15rem;
   color: var(--pure-white);
 }
+.project-card-cta { margin-top: 1rem; }
 
 .section-foot-note {
   margin-top: 2rem;
@@ -976,8 +979,8 @@ section { position: relative; }
 .dr-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 45%, var(--onyx) 100%);
-  opacity: 0.55;
+  background: radial-gradient(ellipse at center, transparent 65%, var(--onyx) 100%);
+  opacity: 0.2;
 }
 .dr-grain {
   position: absolute;

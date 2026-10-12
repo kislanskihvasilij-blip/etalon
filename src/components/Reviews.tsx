@@ -38,7 +38,7 @@ const REVIEWS = [
 export function Reviews() {
   return (
     <section className="section-pad" id="reviews">
-      <DataRain fullscreen={false} className="reviews-rain" palette={RAIN_PALETTE} flowSpeed={0.7} />
+      <DataRain fullscreen={false} className="reviews-rain" palette={RAIN_PALETTE} flowSpeed={1.1} count={2600} />
 
       <div className="container">
         <div className="section-head reveal">
