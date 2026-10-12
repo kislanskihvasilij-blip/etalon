@@ -1,3 +1,7 @@
+import DataRain from "@/components/ui/data-rain"
+
+const RAIN_PALETTE = { calm: "#ffc466", mid: "#ff8c2e", hot: "#ff4d1a" }
+
 const REVIEWS = [
   {
     shot: "/img/reviews/review-1.jpg",
@@ -34,6 +38,8 @@ const REVIEWS = [
 export function Reviews() {
   return (
     <section className="section-pad" id="reviews">
+      <DataRain fullscreen={false} className="reviews-rain" palette={RAIN_PALETTE} flowSpeed={0.7} />
+
       <div className="container">
         <div className="section-head reveal">
           <div className="section-head-text">
