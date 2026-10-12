@@ -1,25 +1,26 @@
 /* =========================================================
-   ЭТАЛОН — редизайн в стиле alpine-банкинга
-   (референс: Mercury — onyx canvas + один кобальтовый акцент)
-   Тёмный холст с мягким градиентом, графитовые карточки 12px,
-   элементы управления — пилюли 32-40px, без теней, интервал
-   540 промежуточного начертания вместо bold/light.
+   ЭТАЛОН — редизайн в стиле editorial-девелопера
+   (референс: October Group — дымчато-тёплый холст, огромная
+   архитектурная фотография, тонкая прописная типографика,
+   нумерованные секции, диагональные срезы между блоками)
+   Тёплый тёмный холст (не чёрный, не холодный), карточки 4px,
+   пилюли 32-40px, без теней, один терракотовый акцент.
    ========================================================= */
 
 :root {
-  /* ---- palette: onyx canvas, graphite cards, one cobalt hit ---- */
-  --onyx: #171721;
-  --onyx-deep: #131019;
-  --graphite: #1e1e2a;
-  --obsidian: #272735;
-  --slate-border: #70707d;
-  --mist: #e2e3ed;
-  --ash: #c3c3cc;
-  --ivory: #ededf3;
+  /* ---- palette: warm charcoal canvas, one dusty-terracotta accent ---- */
+  --onyx: #2b2723;
+  --onyx-deep: #1e1b18;
+  --graphite: #3a342e;
+  --obsidian: #463f37;
+  --slate-border: #8a8178;
+  --mist: #efe9e1;
+  --ash: #bdb3a7;
+  --ivory: #f3ede4;
   --pure-white: #ffffff;
 
-  --cobalt: #5266eb;
-  --cobalt-hover: #6c7ef1;
+  --cobalt: #c17f55;
+  --cobalt-hover: #d3966e;
   --on-accent: var(--pure-white);
 
   /* data-rain particle background — core spark colour only (calm/mid/hot
@@ -30,18 +31,18 @@
   --bg: var(--onyx);
   --bg-elevated: var(--graphite);
   --bg-obsidian: var(--obsidian);
-  --line: rgba(226, 227, 237, 0.12);
-  --line-strong: rgba(226, 227, 237, 0.24);
+  --line: rgba(243, 237, 228, 0.12);
+  --line-strong: rgba(243, 237, 228, 0.24);
   --text-primary: var(--ivory);
   --text-secondary: var(--ash);
-  --text-tertiary: rgba(237, 237, 243, 0.52);
+  --text-tertiary: rgba(243, 237, 228, 0.52);
 
   --accent: var(--cobalt);
   --accent-strong: var(--cobalt-hover);
-  --accent-soft: rgba(82, 102, 235, 0.12);
+  --accent-soft: rgba(193, 127, 85, 0.14);
 
-  /* ---- radius: 12px cards / photos, 32-40px pill controls ---- */
-  --radius: 0.75rem;       /* 12px — cards, photo frames */
+  /* ---- radius: sharp editorial frames, pill controls only ---- */
+  --radius: 0.25rem;       /* 4px — cards, photo frames */
   --radius-pill: 2rem;     /* 32px — buttons, inputs */
   --radius-nav: 2.5rem;    /* 40px — nav pills, tags */
 
@@ -51,15 +52,15 @@
   --container-w: 1200px;
   --card-padding: 2rem;
 
-  /* ---- type: single face, intermediate weights (never bold/light) ---- */
+  /* ---- type: single face, thin editorial uppercase display ---- */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --w-body: 400;
   --w-emphasis: 480;
-  --w-display: 480;
-  --w-display-lg: 530;
+  --w-display: 400;
+  --w-display-lg: 400;
 
   --fs-display: clamp(2.5rem, 5.4vw, 4.0625rem);
   --fs-h2: clamp(1.75rem, 3.1vw, 2.625rem);
@@ -103,6 +104,22 @@ input, textarea { font-family: inherit; }
 h1, h2, h3 {
   font-weight: var(--w-display);
   color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+/* numbered sections — auto counter, October's small page-index labels */
+main { counter-reset: section-index; }
+main > section[id] { counter-increment: section-index; }
+main > section[id] .section-head::before,
+main > section[id] .block-head::before {
+  content: counter(section-index, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
 }
 
 .container {
@@ -355,11 +372,28 @@ section { position: relative; }
 .hero {
   min-height: 100dvh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   padding-top: 76px;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
+}
+.hero-bg-word {
+  position: absolute;
+  left: 50%;
+  bottom: -2.5vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  font-size: clamp(4rem, 15vw, 11rem);
+  line-height: 0.85;
+  font-weight: var(--w-display-lg);
+  letter-spacing: 0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(243, 237, 228, 0.22);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 .hero-scrim {
   position: absolute; inset: 0;
@@ -371,17 +405,26 @@ section { position: relative; }
 .hero-inner {
   padding-block: clamp(2.5rem, 6vw, 4.5rem);
   max-width: 640px;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .hero-eyebrow {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: var(--fs-small);
   color: var(--ash);
-  margin-bottom: 1.1rem;
-  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: var(--accent);
 }
 .hero-title {
   font-size: var(--fs-display);
@@ -401,7 +444,7 @@ section { position: relative; }
   margin-top: 2.25rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 .hero .btn-ghost {

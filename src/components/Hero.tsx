@@ -59,6 +59,9 @@ export function Hero() {
         ))}
       </div>
       <div className="hero-scrim" />
+      <div className="hero-bg-word" aria-hidden="true">
+        ЭТАЛОН
+      </div>
 
       <div className="container hero-inner">
         <span className="hero-eyebrow">Строительство домов · Краснодарский край</span>
