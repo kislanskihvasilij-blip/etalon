@@ -49,7 +49,6 @@ export function WordReveal({
       {words.map((word, i) => (
         <span className="word" style={{ "--i": i } as CSSProperties} key={i}>
           {word}
-          {i < words.length - 1 ? " " : ""}
         </span>
       ))}
     </span>

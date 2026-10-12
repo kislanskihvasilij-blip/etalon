@@ -1,6 +1,4 @@
-# No production domain was available in this codebase at generation time.
-# Replace https://example.com below with the site's real deployed domain.
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://etalon-theta.vercel.app/sitemap.xml

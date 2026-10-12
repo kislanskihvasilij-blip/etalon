@@ -8,38 +8,37 @@
    ========================================================= */
 
 :root {
-  /* ---- palette: warm charcoal canvas, one dusty-terracotta accent ---- */
-  --onyx: #2b2723;
-  --onyx-deep: #1e1b18;
-  --graphite: #3a342e;
-  --obsidian: #463f37;
-  --slate-border: #8a8178;
-  --mist: #efe9e1;
-  --ash: #bdb3a7;
-  --ivory: #f3ede4;
+  /* ---- palette: lifted straight from the ЭТАЛОН logo — deep teal-navy
+     canvas (the logo's block gradients), one orange accent (its roof /
+     badge gradient) ---- */
+  --onyx: #0c2a36;
+  --onyx-rgb: 12, 42, 54;
+  --onyx-deep: #081c24;
+  --graphite: #123a48;
+  --obsidian: #1a4a59;
+  --slate-border: #6f98a3;
+  --mist: #e3eef1;
+  --ash: #a9c3ca;
+  --ivory: #edf5f6;
   --pure-white: #ffffff;
 
-  --cobalt: #c17f55;
-  --cobalt-hover: #d3966e;
+  --cobalt: #ee5844;
+  --cobalt-hover: #f8813f;
   --on-accent: var(--pure-white);
-
-  /* data-rain particle background — core spark colour only (calm/mid/hot
-     are passed per-instance via the `palette` prop) */
-  --dr-core: #fff4e8;
 
   /* semantic aliases used throughout the component CSS below */
   --bg: var(--onyx);
   --bg-elevated: var(--graphite);
   --bg-obsidian: var(--obsidian);
-  --line: rgba(243, 237, 228, 0.12);
-  --line-strong: rgba(243, 237, 228, 0.24);
+  --line: rgba(237, 245, 246, 0.12);
+  --line-strong: rgba(237, 245, 246, 0.24);
   --text-primary: var(--ivory);
   --text-secondary: var(--ash);
-  --text-tertiary: rgba(243, 237, 228, 0.52);
+  --text-tertiary: rgba(237, 245, 246, 0.52);
 
   --accent: var(--cobalt);
   --accent-strong: var(--cobalt-hover);
-  --accent-soft: rgba(193, 127, 85, 0.14);
+  --accent-soft: rgba(238, 88, 68, 0.14);
 
   /* ---- radius: sharp editorial frames, pill controls only ---- */
   --radius: 0.25rem;       /* 4px — cards, photo frames */
@@ -272,7 +271,7 @@ section { position: relative; }
   transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease), backdrop-filter 0.3s var(--ease);
 }
 .site-header.is-scrolled {
-  background: rgba(23, 23, 33, 0.72);
+  background: rgba(var(--onyx-rgb), 0.82);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-bottom-color: var(--line);
@@ -390,7 +389,7 @@ section { position: relative; }
   font-weight: var(--w-display-lg);
   letter-spacing: 0.02em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(243, 237, 228, 0.22);
+  -webkit-text-stroke: 1px var(--line-strong);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -398,8 +397,8 @@ section { position: relative; }
 .hero-scrim {
   position: absolute; inset: 0;
   background:
-    radial-gradient(120% 90% at 50% 20%, rgba(23, 23, 33, 0.35), rgba(23, 23, 33, 0.72) 65%),
-    linear-gradient(180deg, rgba(20, 20, 29, 0.55) 0%, rgba(17, 17, 25, 0.6) 45%, rgba(15, 15, 22, 0.95) 100%);
+    radial-gradient(120% 90% at 50% 20%, rgba(var(--onyx-rgb), 0.35), rgba(var(--onyx-rgb), 0.72) 65%),
+    linear-gradient(180deg, rgba(var(--onyx-rgb), 0.55) 0%, rgba(var(--onyx-rgb), 0.6) 45%, rgba(var(--onyx-rgb), 0.95) 100%);
   z-index: -1;
 }
 .hero-inner {
@@ -485,7 +484,7 @@ section { position: relative; }
   height: 30px;
   border-radius: 50%;
   border: 1px solid var(--line-strong);
-  background: rgba(23, 23, 33, 0.4);
+  background: rgba(var(--onyx-rgb), 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -562,8 +561,8 @@ section { position: relative; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(15,15,22,0.7) 0%, rgba(15,15,22,0.08) 34%, rgba(15,15,22,0.06) 60%, rgba(15,15,22,0.68) 100%),
-    linear-gradient(90deg, rgba(15,15,22,0.45) 0%, rgba(15,15,22,0) 32%);
+    linear-gradient(180deg, rgba(var(--onyx-rgb),0.7) 0%, rgba(var(--onyx-rgb),0.08) 34%, rgba(var(--onyx-rgb),0.06) 60%, rgba(var(--onyx-rgb),0.68) 100%),
+    linear-gradient(90deg, rgba(var(--onyx-rgb),0.45) 0%, rgba(var(--onyx-rgb),0) 32%);
 }
 
 .feature-overlay-copy {
@@ -695,7 +694,7 @@ section { position: relative; }
 .interior-walk-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15,15,22,0) 55%, rgba(15,15,22,0.82) 100%);
+  background: linear-gradient(180deg, rgba(var(--onyx-rgb),0) 55%, rgba(var(--onyx-rgb),0.82) 100%);
   z-index: 3;
 }
 .interior-walk-caption {
@@ -981,59 +980,6 @@ section { position: relative; }
 }
 .review-person-link:hover { color: var(--ivory); }
 
-#reviews {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-#reviews .container {
-  position: relative;
-  z-index: 1;
-}
-.reviews-rain {
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* =========================================================
-   DATA RAIN — particle-flow canvas background (decorative)
-   ========================================================= */
-.dr-root {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-}
-.dr-root--contained {
-  position: absolute;
-}
-.dr-main,
-.dr-bloom {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.dr-bloom {
-  filter: blur(10px);
-  opacity: 0.7;
-  mix-blend-mode: screen;
-}
-.dr-vignette {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 65%, var(--onyx) 100%);
-  opacity: 0.2;
-}
-.dr-grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 160px 160px;
-}
-
 /* =========================================================
    CONTACT
    ========================================================= */
@@ -1268,6 +1214,7 @@ html.has-custom-cursor textarea { cursor: auto; }
    ========================================================= */
 .word-reveal .word {
   display: inline-block;
+  margin-right: 0.28em;
   filter: blur(6px);
   opacity: 0;
   transform: translateY(0.2em);
