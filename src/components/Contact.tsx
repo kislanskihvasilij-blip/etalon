@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react"
+import { SocialLinks } from "./SocialLinks"
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -31,6 +32,12 @@ export function Contact() {
                 8 800 302-01-03
               </a>{" "}
               (звонок бесплатный)
+            </dd>
+          </dl>
+          <dl className="contact-detail">
+            <dt>Мы в соцсетях</dt>
+            <dd>
+              <SocialLinks className="contact-social" />
             </dd>
           </dl>
         </div>

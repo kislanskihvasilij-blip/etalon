@@ -11,34 +11,34 @@
   /* ---- palette: lifted straight from the ЭТАЛОН logo — deep teal-navy
      canvas (the logo's block gradients), one orange accent (its roof /
      badge gradient) ---- */
-  --onyx: #141210;
-  --onyx-rgb: 20, 18, 16;
-  --onyx-deep: #0a0908;
-  --graphite: #201c18;
-  --obsidian: #2c2620;
-  --slate-border: #8a7f72;
-  --mist: #ece6de;
-  --ash: #b9ada0;
-  --ivory: #f1ebe3;
+  --onyx: #121212;
+  --onyx-rgb: 18, 18, 18;
+  --onyx-deep: #090909;
+  --graphite: #1c1c1c;
+  --obsidian: #272727;
+  --slate-border: #8c8c8c;
+  --mist: #e9e9e9;
+  --ash: #b3b3b3;
+  --ivory: #f3f3f3;
   --pure-white: #ffffff;
 
-  --cobalt: #c2410c;
-  --cobalt-hover: #da5218;
+  --cobalt: #d9530f;
+  --cobalt-hover: #ef6a1f;
   --on-accent: var(--pure-white);
 
   /* semantic aliases used throughout the component CSS below */
   --bg: var(--onyx);
   --bg-elevated: var(--graphite);
   --bg-obsidian: var(--obsidian);
-  --line: rgba(241, 235, 227, 0.12);
-  --line-strong: rgba(241, 235, 227, 0.24);
+  --line: rgba(243, 243, 243, 0.12);
+  --line-strong: rgba(243, 243, 243, 0.24);
   --text-primary: var(--ivory);
   --text-secondary: var(--ash);
-  --text-tertiary: rgba(241, 235, 227, 0.52);
+  --text-tertiary: rgba(243, 243, 243, 0.52);
 
   --accent: var(--cobalt);
   --accent-strong: var(--cobalt-hover);
-  --accent-soft: rgba(194, 65, 12, 0.16);
+  --accent-soft: rgba(217, 83, 15, 0.16);
 
   /* ---- radius: sharp editorial frames, pill controls only ---- */
   --radius: 0.25rem;       /* 4px — cards, photo frames */
@@ -1162,6 +1162,25 @@ section[id] { scroll-margin-top: 92px; }
 }
 .footer-nav { display: flex; gap: 1.5rem; }
 .footer-nav a:hover { color: var(--ivory); }
+
+.social-links { display: flex; gap: 0.6rem; }
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  color: var(--text-secondary);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.social-link:hover {
+  color: var(--ivory);
+  border-color: var(--accent-strong);
+  transform: translateY(-2px);
+}
+.contact-social { margin-top: 0.3rem; }
 .footer-to-top {
   display: flex;
   align-items: center;
@@ -1179,36 +1198,6 @@ section[id] { scroll-margin-top: 92px; }
   border-color: var(--cobalt-hover);
   transform: translateY(-2px);
 }
-
-/* =========================================================
-   CUSTOM CURSOR — snapping dot only, no trailing ring.
-   Kept ivory/neutral: cobalt is reserved for the primary CTA.
-   ========================================================= */
-html.has-custom-cursor body { cursor: none; }
-html.has-custom-cursor a,
-html.has-custom-cursor button,
-html.has-custom-cursor .btn,
-html.has-custom-cursor label { cursor: none; }
-html.has-custom-cursor input,
-html.has-custom-cursor textarea { cursor: auto; }
-
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 24px;
-  height: 24px;
-  margin: -3px 0 0 -3px;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0;
-  color: var(--ivory);
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
-  transition: opacity 0.3s var(--ease), transform 0.2s var(--ease);
-  will-change: transform;
-}
-.cursor-dot svg { display: block; width: 100%; height: 100%; }
-.cursor-dot.is-active { transform: scale(1.35); }
 
 /* =========================================================
    REVEAL ON SCROLL

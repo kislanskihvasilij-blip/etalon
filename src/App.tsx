@@ -12,7 +12,6 @@ import { Stats } from "@/components/Stats"
 import { Reviews } from "@/components/Reviews"
 import { Contact } from "@/components/Contact"
 import { Footer } from "@/components/Footer"
-import { CustomCursor } from "@/components/CustomCursor"
 import { useRevealAll } from "@/hooks/useRevealAll"
 
 export default function App() {
@@ -36,7 +35,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <CustomCursor />
     </>
   )
 }

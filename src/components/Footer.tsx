@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import type { MouseEventHandler, ReactNode } from "react"
 import { ArrowUp } from "lucide-react"
+import { SocialLinks } from "./SocialLinks"
 
 const MARQUEE_ITEMS = [
   "Строительство по договору",
@@ -99,6 +100,8 @@ export function Footer() {
           <a href="#process">Процесс</a>
           <a href="#contact">Контакты</a>
         </nav>
+
+        <SocialLinks className="footer-social" />
 
         <button
           type="button"
